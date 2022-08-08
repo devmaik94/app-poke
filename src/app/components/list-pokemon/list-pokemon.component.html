@@ -1,0 +1,40 @@
+
+<ng-container *ngIf="loader === 0; else elseTemplate">
+	<div class="loader"></div>
+</ng-container>
+<ng-template #elseTemplate>
+	<div class="container-table">
+		<table  *ngIf="PokeList.length > 0" >
+			<thead>
+			<tr>
+				<th class="title-g">Nombre</th>
+				<th class="title-g">Imagen</th>
+				<th class="title-g">Ataque</th>
+				<th class="title-g">Defensa</th>
+				<th class="title-g">Acciones</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr *ngFor="let Poke of PokeList | filter:sear">
+				<td><p class="poke-name">{{Poke.name}}</p></td>
+				<td >
+					<img [src]="Poke.image" onError="this.src='../../../assets/nodata.png'" class="poke-image">
+				</td>
+				<td>{{Poke.attack}}</td>
+				<td>{{Poke.defense}}</td>
+				<td>
+					<div class="row evenly">
+						<button type="button" class="btn-icon" title="Editar" (click)="edit(Poke)">
+							<i class="bi bi-pencil i-1-5"></i>
+						</button>
+	
+						<button type="button" class="btn-icon" (click)="deletePoke(Poke)">
+							<i class="bi bi-trash i-1-5" title="Eliminar"></i>
+						</button>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</ng-template>

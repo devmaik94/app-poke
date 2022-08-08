@@ -1,0 +1,59 @@
+<div class="container-add-global">
+
+    <div class="container-add-title">
+        <h3 class="i-1">Nuevo pokemon</h3>
+    </div>
+
+    <div class="container-form row evenly" [formGroup]="formPokemon">
+            <div class="form-inputs column around">
+                <div class="row between align-center">
+                    <h4>Nombre</h4>
+                    <input type="text" placeholder="Nombre del pokemon" class="inputs i-1" formControlName="name" required>
+                </div>
+                <div class="row cont-error">
+                    <small class="error" *ngIf="formPokemon.get('name')?.errors?.['minlength']">
+                        <i class="bi bi-info-circle"></i>
+                        Mínimo 3 caracteres
+                    </small>
+                </div>
+
+                <div class="row between align-center"> 
+                    <h4>Url</h4>
+                    <input type="text" placeholder="Url de imagen" class="inputs i-1" formControlName="image" required>
+                </div>
+                <div class="row cont-error">
+                    <small class="error" *ngIf="formPokemon.get('image')?.errors?.['pattern']">
+                        <i class="bi bi-info-circle"></i>
+                        La url no es válida
+                    </small>
+                </div>
+            </div>
+    
+            <div class="form-inputs column around">
+                <div class="row between align-center">
+                    <h4>Ataque</h4>
+                    <input type="range" name="myInput" step="1" [value]="0" [max]="100" required class="inputs-range" #attack formControlName="attack" >
+                    <p>{{attack.value}}</p>
+                </div>
+        
+                <div class="row between align-center"> 
+                    <h4>Defensa</h4>
+                    <input type="range" name="myInput" step="1" [value]="0" [max]="100" required class="inputs-range" #defense formControlName="defense">
+                    <p>{{defense.value}}</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div class="container-actions row center">
+        <button type="button" class="btn btn-m" (click)="save()" [disabled]="formPokemon.status === 'INVALID'">
+            <i class="bi bi-plus-circle-dotted i-1 i-m"></i>
+            Guardar
+        </button>
+        <button type="button" class="btn btn-m" (click)="cancelPoke()">
+            <i class="bi bi-x-circle i-1 i-m"></i>
+            Cancelar
+        </button>
+    </div>
+
+</div>

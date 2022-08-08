@@ -1,0 +1,30 @@
+
+  <div class="container-title">
+    <h2>Listado de pokemones</h2>
+  </div>
+
+  <div class="container-search">
+    
+    <div class="container-input">
+      <div class="container-search">
+        <i class="bi bi-search"></i>
+        <input type="search"  [(ngModel)]="search" placeholder="Buscar" name="filter"  class="input-search" >
+      </div>
+    </div>
+
+    <div class="container-action">
+      <button type="button" class="btn" (click)="add()">
+        <i class="bi bi-plus i-2"></i>
+        Nuevo
+      </button>
+    </div>
+  </div>
+
+  <div class="container-list" *ngIf="pokemonData.length > 0">
+    
+    <list-pokemon [PokeList]="pokemonData" [loader]="loadinit" (updateList)="updateData($event)" (editPoke)="edit($event)" [sear]="search" ></list-pokemon>
+  </div>
+
+  <div class="container-add" *ngIf="containerAdd">
+    <add-pokemon [dataEdit]="dataEdit" (formCancel)="formCancel($event)" (updateList)="updateData($event)" ></add-pokemon>
+  </div>

@@ -1,0 +1,81 @@
+/* -------------------------------------------------------------------------- */
+/*                               POKEMON STYLES                               */
+/* -------------------------------------------------------------------------- */
+
+
+.container-global{
+    // border: 1px solid red;
+    height: 100vh;
+    width: 100vw;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}   
+
+.container-title{
+    height: 8vh;
+    // border: 1px solid red;
+    width: 80%;
+}
+
+.container-search{
+    height: 8vh;
+    // border: 1px solid red;
+    width: 80%;
+    margin: 15px 0 15px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-input{
+    // background-color: red;
+    height: inherit;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    .container-search{
+        width: 200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: white;
+        height: 80%;
+        border: 2px solid rgb(182, 182, 182);
+        border-radius: 9px;
+
+    }
+    .input-search{
+        height: 80%;
+        width: 170px;
+        border: none;
+        font-size: 1rem;
+        color: var(--PrimaryTxt);
+    }
+    .input-search:focus{
+        border: none;
+        outline: none;
+    }
+}
+
+.container-action{
+    // background-color: palegreen;
+    height: inherit;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.container-list{
+    height: 30vh;
+    width: 80%;
+    margin: 10px 0 10px 0;
+}
+
+.container-add{
+    height: 35vh;
+    width: 80%;
+    margin: 10px 0 10px 0;
+    border: 1px solid rgb(201, 201, 201);
+}

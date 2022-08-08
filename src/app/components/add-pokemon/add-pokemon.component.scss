@@ -1,0 +1,58 @@
+.container-add-global{
+    height: 100%;
+    width: 100%;
+    background-color: white
+}
+
+
+.container-add-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%
+}
+
+.container-form{
+    height: 60%;
+    .form-inputs{
+        height: 100%;
+        width: 30%;
+        
+    }
+    .inputs{
+        height: 40px;
+        width: 65%;
+        border: 1px solid rgb(187, 187, 187);
+        border-radius: 6px;
+        color: var(--SecondTxt);
+    
+    }
+    .inputs:focus{
+        outline: none;
+    }
+
+
+    .inputs-range{
+        width: 60%;
+        background-color: transparent;
+    }
+}
+
+.container-actions{
+    height: 20%;
+    .btn-m{
+        margin: 0 20px 0 20px;
+    }
+    .i-m{
+        margin-right: 6px;
+    }
+}
+
+.cont-error{
+    height: 0px; position: relative; top: -8px;
+}
+.error{
+    color: var(--error);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
